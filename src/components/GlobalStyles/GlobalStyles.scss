@@ -2,7 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
 
 :root {
-    --primary: #ff6666;
+    // Genaral color
+    --primary-color: #ff4d4d;
+    --black-color: #121212;
+    --black-color-secondary: #212121;
+    --gray-color: #404040;
+
+    // Text color
+    --text-white-color: #fff;
+    --text-white-color-secondary: #aaaa;
 
     // Default Layout
     --default-layout-header-height: 60px;
@@ -21,9 +29,21 @@ html {
 
 body {
     color: #fff;
-    background-color: #121212;
+    background-color: var(--black-color);
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-white-color);
+    text-decoration: none;
 }

@@ -1,4 +1,9 @@
 .wrapper {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --serach-top-spacer: 9px;
+    --search-button-width: 52px;
+
     width: 100%;
     height: var(--default-layout-header-height);
     box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.12);
@@ -9,4 +14,80 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+// .logo {
+//     display: flex;
+// }
+
+.search {
+    width: 361px;
+    position: relative;
+    padding-left: 16px;
+    display: flex;
+    height: var(--search-height);
+    border-radius: var(--search-border-radius);
+    background-color: var(--black-color-secondary);
+    border: 1px solid transparent;
+
+    input {
+        flex: 1;
+        height: 100%;
+        font-size: 1.6rem;
+        background-color: transparent;
+        color: var(--text-color-secondary);
+        caret-color: var(--primary-color);
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: #bfbfbf;
+    }
+
+    &::after {
+        content: '';
+        width: 1px;
+        right: 51px;
+        position: absolute;
+        top: var(--serach-top-spacer);
+        background-color: var(--gray-color);
+        height: calc(var(--search-height) - var(--serach-top-spacer) * 2);
+    }
+
+    &:focus-within {
+        border-color: var(--text-white-color-secondary);
+    }
+}
+
+.clear,
+.loading {
+    display: none;
+    top: 50%;
+    position: absolute;
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+    right: calc(var(--search-button-width) + 14px);
+    color: var(--text-white-color-secondary);
+    background-color: var(--black-color-secondary);
+}
+
+.search-btn {
+    width: var(--search-button-width);
+    height: 100%;
+    font-size: 1.8rem;
+    color: var(--text-white-color-secondary);
+    background-color: var(--black-color-secondary);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+
+    &:hover {
+        background-color: var(--gray-color);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: var(--black-color-secondary);
+    }
 }
