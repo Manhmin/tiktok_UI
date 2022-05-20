@@ -1,0 +1,95 @@
+.search-result {
+    width: 361px;
+}
+
+.search {
+    width: 361px;
+    position: relative;
+    padding-left: 16px;
+    display: flex;
+    height: var(--search-height);
+    border-radius: var(--search-border-radius);
+    background-color: var(--black-color-secondary);
+    border: 1px solid transparent;
+
+    input {
+        flex: 1;
+        height: 100%;
+        font-size: 1.6rem;
+        background-color: transparent;
+        color: var(--color-secondary);
+        caret-color: var(--primary-color);
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: #bfbfbf;
+    }
+
+    &::after {
+        content: '';
+        width: 1px;
+        right: 51px;
+        position: absolute;
+        top: var(--serach-top-spacer);
+        background-color: var(--gray-color);
+        height: calc(var(--search-height) - var(--serach-top-spacer) * 2);
+    }
+
+    &:focus-within {
+        border-color: var(--white-color-secondary);
+    }
+}
+
+.search-title {
+    padding: 5px 12px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white-color-secondary);
+}
+
+.clear,
+.loading {
+    // display: none;
+    top: 50%;
+    position: absolute;
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+    right: calc(var(--search-button-width) + 14px);
+    color: var(--white-color-secondary);
+    background-color: var(--black-color-secondary);
+}
+
+.loading {
+    animation: spinner 0.9s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--search-button-width);
+    height: 100%;
+    font-size: 1.8rem;
+    color: var(--white-color-secondary);
+    background-color: var(--black-color-secondary);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+
+    &:hover {
+        background-color: var(--gray-color);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: var(--black-color-secondary);
+    }
+}
