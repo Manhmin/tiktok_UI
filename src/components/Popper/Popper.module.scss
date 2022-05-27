@@ -1,11 +1,13 @@
+// Popup of account
 .wrapper {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    max-height: min((100vh - 96px) - 60px, 734px);
     min-height: 100px;
-    max-height: min((100vh - 96px) - 60px);
-    background-color: var(--black-color);
-    box-shadow: rgb(255 255 255 / 10%) 0px 2px 10px;
-    border-radius: 8px;
+    // height: fit-content;
     padding-top: 8px;
-    // display: flex;
-    // flex-direction: column;
+    border-radius: 8px;
+    box-shadow: rgb(255 255 255 / 10%) 0px 2px 10px;
+    background-color: var(--black-color);
 }

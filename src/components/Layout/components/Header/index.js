@@ -12,7 +12,10 @@ import {
     faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import Tippy from '@tippyjs/react'
+import { Link } from 'react-router-dom'
 import 'tippy.js/dist/tippy.css'
+
+import routesConfig from '~/config/routes'
 import Button from '~/components/Button'
 import styles from './Header.module.scss'
 import images from '~/assets/images'
@@ -95,9 +98,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img src={images.logo} alt='tiktok' />
-                </div>
+                <Link to={routesConfig.home} className={cx('logo')}>
+                    <img src={images.logo} alt="tiktok" />
+                </Link>
 
                 <Search />
 
@@ -106,19 +109,19 @@ function Header() {
                         <>
                             <Tippy
                                 delay={[0, 50]}
-                                content='Upload video'
-                                placement='bottom'
+                                content="Upload video"
+                                placement="bottom"
                             >
                                 <button className={cx('action-btn')}>
                                     <UploadIcon />
                                 </button>
                             </Tippy>
-                            <Tippy content='Message' placement='bottom'>
+                            <Tippy content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <MessageIcon />
                                 </button>
                             </Tippy>
-                            <Tippy content='Inbox' placement='bottom'>
+                            <Tippy content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <InboxIcon />
                                     <span className={cx('badge')}>3</span>
@@ -138,7 +141,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src='https://i1.sndcdn.com/artworks-NEqICFr9sNcJ2YMC-pnDcZw-t500x500.jpg'
+                                src="https://i1.sndcdn.com/artworks-NEqICFr9sNcJ2YMC-pnDcZw-t500x500.jpg"
                                 // fallback='https://i0.wp.com/www.usmagazine.com/wp-content/uploads/2017/10/millie-bobby-brown-stranger-things-s2.jpg?crop=190px%2C0px%2C1394px%2C788px&resize=1600%2C900&ssl=1&quality=86&strip=all'
                                 // alt='avatar'
                             />
